@@ -1,0 +1,107 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://icone/menu.png" type="Texture" id=1]
+[ext_resource path="res://icone/voltar.png" type="Texture" id=2]
+[ext_resource path="res://imagem/fundos/fundo_branco.png" type="Texture" id=3]
+[ext_resource path="res://script/selecionar_regua/voltar.gd" type="Script" id=4]
+[ext_resource path="res://script/selecionar_regua/menu.gd" type="Script" id=5]
+[ext_resource path="res://script/selecionar_regua/regua_05.gd" type="Script" id=6]
+[ext_resource path="res://script/selecionar_regua/regua_32.gd" type="Script" id=7]
+[ext_resource path="res://script/selecionar_regua/regua_1.gd" type="Script" id=8]
+[ext_resource path="res://icone/cefet.png" type="Texture" id=9]
+[ext_resource path="res://script/selecionar_regua/regua_16.gd" type="Script" id=10]
+[ext_resource path="res://fontes/new_dynamicfont.tres" type="DynamicFont" id=11]
+[ext_resource path="res://temas/tema_exemplo.tres" type="Theme" id=12]
+[ext_resource path="res://temas/botoes_de_funcaobasica.tres" type="Theme" id=13]
+[ext_resource path="res://icone/simulador_mini.png" type="Texture" id=14]
+[ext_resource path="res://imagem/fundos/mini_logo.png" type="Texture" id=15]
+
+[node name="selecao" type="Node2D"]
+
+[node name="fundobranco" type="Sprite" parent="."]
+position = Vector2( 642.5, 362.251 )
+scale = Vector2( 1.17577, 1.0805 )
+texture = ExtResource( 3 )
+
+[node name="button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+theme = ExtResource( 13 )
+icon = ExtResource( 1 )
+icon_align = 1
+script = ExtResource( 5 )
+
+[node name="button2" type="Button" parent="."]
+margin_left = 84.0
+margin_right = 167.0
+margin_bottom = 77.0
+theme = ExtResource( 13 )
+icon = ExtResource( 2 )
+icon_align = 1
+script = ExtResource( 4 )
+
+[node name="button3" type="Button" parent="."]
+margin_left = 371.0
+margin_top = 185.0
+margin_right = 926.0
+margin_bottom = 285.0
+theme = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "RÉGUA DE RESOLUÇÃO 1 MM"
+script = ExtResource( 8 )
+
+[node name="SimuladorMini" type="Sprite" parent="button3"]
+position = Vector2( 858, -140 )
+texture = ExtResource( 14 )
+
+[node name="button4" type="Button" parent="."]
+margin_left = 371.0
+margin_top = 320.0
+margin_right = 926.0
+margin_bottom = 420.0
+theme = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "RÉGUA DE RESOLUÇÃO 0,5 MM"
+script = ExtResource( 6 )
+
+[node name="button5" type="Button" parent="."]
+margin_left = 371.0
+margin_top = 595.0
+margin_right = 926.0
+margin_bottom = 695.0
+theme = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "RÉGUA DE RESOLUÇÃO 1/32''"
+script = ExtResource( 7 )
+
+[node name="textureRect" type="TextureRect" parent="."]
+margin_left = 561.0
+margin_top = 2.0
+margin_right = 744.0
+margin_bottom = 125.0
+texture = ExtResource( 9 )
+
+[node name="button6" type="Button" parent="."]
+margin_left = 371.0
+margin_top = 459.0
+margin_right = 926.0
+margin_bottom = 559.0
+theme = ExtResource( 12 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 11 )
+text = "RÉGUA DE RESOLUÇÃO 1/16''"
+script = ExtResource( 10 )
+
+[node name="MiniLogo" type="Sprite" parent="."]
+position = Vector2( 1189, 678 )
+texture = ExtResource( 15 )
+
+[connection signal="button_up" from="button" to="button" method="_on_button_button_up"]
+[connection signal="button_up" from="button2" to="button2" method="_on_button2_button_up"]
+[connection signal="button_up" from="button3" to="button3" method="_on_button3_button_up"]
+[connection signal="button_up" from="button4" to="button4" method="_on_button4_button_up"]
+[connection signal="button_up" from="button5" to="button5" method="_on_button5_button_up"]
+[connection signal="button_up" from="button6" to="button6" method="_on_button6_button_up"]

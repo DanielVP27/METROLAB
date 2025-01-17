@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/american2.mp3-083e3ec0e0c08348b1d7b67f505e005d.mp3str"
+
+[deps]
+
+source_file="res://audios/american2.mp3"
+dest_files=[ "res://.import/american2.mp3-083e3ec0e0c08348b1d7b67f505e005d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

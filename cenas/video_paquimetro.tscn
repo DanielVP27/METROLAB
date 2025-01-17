@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/video_paquimetro/button2.gd" type="Script" id=2]
+[ext_resource path="res://script/video_paquimetro/button3.gd" type="Script" id=3]
+[ext_resource path="res://script/video_paquimetro/button.gd" type="Script" id=4]
+[ext_resource path="res://icone/voltar.png" type="Texture" id=5]
+[ext_resource path="res://icone/cefet.png" type="Texture" id=6]
+[ext_resource path="res://imagem/fundos/fundo_branco.png" type="Texture" id=7]
+[ext_resource path="res://icone/menu.png" type="Texture" id=8]
+
+[node name="link_procedimento" type="Node2D"]
+
+[node name="fundobranco" type="Sprite" parent="."]
+position = Vector2( 645.001, 367.688 )
+scale = Vector2( 1.18761, 1.11466 )
+texture = ExtResource( 7 )
+
+[node name="button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+icon = ExtResource( 8 )
+script = ExtResource( 4 )
+
+[node name="button2" type="Button" parent="."]
+margin_left = 85.0
+margin_right = 168.0
+margin_bottom = 77.0
+icon = ExtResource( 5 )
+script = ExtResource( 2 )
+
+[node name="button3" type="Button" parent="."]
+margin_left = 371.0
+margin_top = 274.0
+margin_right = 926.0
+margin_bottom = 494.0
+text = "playlist de paquimetro"
+script = ExtResource( 3 )
+
+[node name="cefet" type="TextureRect" parent="."]
+margin_left = 547.0
+margin_top = -39.0
+margin_right = 771.0
+margin_bottom = 186.0
+texture = ExtResource( 6 )
+
+[connection signal="button_up" from="button" to="button" method="_on_button_button_up"]
+[connection signal="button_up" from="button2" to="button2" method="_on_button2_button_up"]
+[connection signal="button_up" from="button3" to="button3" method="_on_button3_button_up"]

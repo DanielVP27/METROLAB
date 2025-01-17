@@ -1,0 +1,193 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://imagem/fundos/fundo_branco.png" type="Texture" id=1]
+[ext_resource path="res://script/resultadodemedicaofracionario/resultadodemedicaofracionario.gd" type="Script" id=2]
+[ext_resource path="res://script/resultadodemedicaofracionario/button2.gd" type="Script" id=3]
+[ext_resource path="res://script/resultadodemedicaofracionario/button3.gd" type="Script" id=4]
+[ext_resource path="res://icone/voltar.png" type="Texture" id=5]
+[ext_resource path="res://icone/menu.png" type="Texture" id=6]
+[ext_resource path="res://fontes/new_dynamicfont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://temas/tema_exemplo.tres" type="Theme" id=8]
+[ext_resource path="res://imagem/fundos/mini_logo.png" type="Texture" id=9]
+[ext_resource path="res://temas/lineedit.tres" type="Theme" id=10]
+[ext_resource path="res://temas/botoes_de_funcaobasica.tres" type="Theme" id=11]
+[ext_resource path="res://temas/arial_negrito.tres" type="DynamicFont" id=12]
+[ext_resource path="res://temas/tema_button_azulmarinho.tres" type="Theme" id=13]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.156863, 1, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.356863, 0.419608, 0.588235, 1 )
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="resultadodemedicao" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="fundobranco" type="Sprite" parent="."]
+position = Vector2( 664.5, 368.75 )
+scale = Vector2( 1.23588, 1.14697 )
+texture = ExtResource( 1 )
+
+[node name="num_readings_edit" type="LineEdit" parent="."]
+margin_left = 20.0
+margin_top = 114.0
+margin_right = 449.0
+margin_bottom = 164.0
+theme = ExtResource( 13 )
+text = "INSIRA O NÚMERO DE LEITURAS"
+align = 1
+
+[node name="resultadolineedit" type="LineEdit" parent="."]
+margin_left = 468.0
+margin_top = 113.0
+margin_right = 793.0
+margin_bottom = 247.0
+theme = ExtResource( 10 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "INSERIR A RESOLUÇÃO"
+align = 1
+
+[node name="label" type="Label" parent="."]
+margin_left = 726.0
+margin_top = 280.0
+margin_right = 955.0
+margin_bottom = 373.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="label2" type="Label" parent="."]
+margin_left = 726.0
+margin_top = 330.0
+margin_right = 919.0
+margin_bottom = 427.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="label3" type="Label" parent="."]
+margin_left = 726.0
+margin_top = 430.0
+margin_right = 887.0
+margin_bottom = 531.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="button2" type="Button" parent="."]
+margin_left = 89.0
+margin_top = 3.0
+margin_right = 172.0
+margin_bottom = 80.0
+theme = ExtResource( 11 )
+icon = ExtResource( 5 )
+icon_align = 1
+script = ExtResource( 3 )
+
+[node name="button3" type="Button" parent="."]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 87.0
+margin_bottom = 81.0
+theme = ExtResource( 11 )
+icon = ExtResource( 6 )
+icon_align = 1
+script = ExtResource( 4 )
+
+[node name="button4" type="Button" parent="."]
+margin_left = 873.0
+margin_top = 188.0
+margin_right = 963.0
+margin_bottom = 238.0
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "90%"
+
+[node name="button5" type="Button" parent="."]
+margin_left = 986.0
+margin_top = 188.0
+margin_right = 1076.0
+margin_bottom = 238.0
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "95%"
+
+[node name="button6" type="Button" parent="."]
+margin_left = 1104.0
+margin_top = 188.0
+margin_right = 1194.0
+margin_bottom = 238.0
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "99%"
+
+[node name="label4" type="Label" parent="."]
+margin_left = 726.0
+margin_top = 480.0
+margin_right = 955.0
+margin_bottom = 573.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="label5" type="Label" parent="."]
+margin_left = 726.0
+margin_top = 380.0
+margin_right = 953.0
+margin_bottom = 485.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="resultadoslabel" type="Label" parent="."]
+margin_left = 726.0
+margin_top = 530.0
+margin_right = 934.0
+margin_bottom = 635.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="inputs_container" type="VBoxContainer" parent="."]
+margin_left = 99.0
+margin_top = 253.0
+margin_right = 343.0
+margin_bottom = 708.0
+theme = ExtResource( 10 )
+
+[node name="create_inputs_button" type="Button" parent="."]
+margin_left = 20.0
+margin_top = 188.0
+margin_right = 449.0
+margin_bottom = 238.0
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "INSERIR AS LEITURAS"
+
+[node name="label6" type="Label" parent="."]
+margin_left = 810.0
+margin_top = 114.0
+margin_right = 1243.0
+margin_bottom = 181.0
+custom_fonts/font = ExtResource( 12 )
+custom_styles/normal = SubResource( 1 )
+text = "SELECIONE A CONFIABILIDADE 
+DESEJADA"
+align = 1
+
+[node name="MiniLogo" type="Sprite" parent="."]
+position = Vector2( 1187, 678 )
+texture = ExtResource( 9 )
+
+[connection signal="focus_entered" from="num_readings_edit" to="." method="_on_num_readings_edit_focus_entered"]
+[connection signal="focus_entered" from="resultadolineedit" to="." method="_on_resultadolineedit_focus_entered"]
+[connection signal="button_up" from="button2" to="button2" method="_on_button2_button_up"]
+[connection signal="button_up" from="button3" to="button3" method="_on_button3_button_up"]

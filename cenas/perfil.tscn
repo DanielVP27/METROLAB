@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://fontes/new_dynamicfont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://imagem/fundos/fundo_branco.png" type="Texture" id=2]
+[ext_resource path="res://icone/voltar.png" type="Texture" id=3]
+[ext_resource path="res://icone/menu.png" type="Texture" id=4]
+[ext_resource path="res://temas/botoes_de_funcaobasica.tres" type="Theme" id=5]
+[ext_resource path="res://icone/perfil_mini.png" type="Texture" id=6]
+[ext_resource path="res://script/perfil/button_menu.gd" type="Script" id=7]
+[ext_resource path="res://script/perfil/button_perfil.gd" type="Script" id=8]
+[ext_resource path="res://icone/cefet.png" type="Texture" id=9]
+[ext_resource path="res://script/perfil/labelnode.gd" type="Script" id=10]
+[ext_resource path="res://audios/american2.mp3" type="AudioStream" id=11]
+[ext_resource path="res://imagem/fundos/mini_logo.png" type="Texture" id=12]
+
+[sub_resource type="GDScript" id=1]
+
+[node name="perfil" type="Node2D"]
+script = SubResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ -207.0 ]
+}
+
+[node name="fundobranco" type="Sprite" parent="."]
+position = Vector2( 639.814, 362.5 )
+scale = Vector2( 1.18795, 1.13589 )
+texture = ExtResource( 2 )
+
+[node name="textureRect2" type="TextureRect" parent="."]
+margin_left = 542.0
+margin_top = 2.0
+margin_right = 725.0
+margin_bottom = 125.0
+texture = ExtResource( 9 )
+
+[node name="labelnode" type="Node2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="labelnode"]
+margin_left = 6.0
+margin_top = 182.0
+margin_right = 1275.0
+margin_bottom = 744.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "MEMBROS DO PROJETO: 
+	DANIEL VITOR PEREIRA
+	ADRIEL MAGALHÃES SOUZA
+	THIAGO GOMES CARDOSO
+	MATEUS ANTUNES OLIVEIRA LEITE
+
+CANAIS PARA ATENDIMENTO
+EMAIL
+	DANIELOFICIAL27@HOTMAIL.COM
+TELEFONE
+	(34) 999268282
+	
+CRÉDITOS PELA PRODUÇÃO DA LOGO
+EDER FERREIRA DE ALMEIDA FILHO
+CAIO MIGUEL DE MORAES SILVA"
+align = 1
+valign = 1
+
+[node name="audiostreamplayer" type="AudioStreamPlayer" parent="labelnode"]
+stream = ExtResource( 11 )
+
+[node name="button5" type="Button" parent="."]
+margin_left = 3.0
+margin_top = 2.0
+margin_right = 74.0
+margin_bottom = 73.0
+theme = ExtResource( 5 )
+icon = ExtResource( 4 )
+icon_align = 1
+script = ExtResource( 7 )
+
+[node name="button6" type="Button" parent="."]
+margin_left = 77.0
+margin_top = 2.0
+margin_right = 148.0
+margin_bottom = 73.0
+theme = ExtResource( 5 )
+icon = ExtResource( 3 )
+icon_align = 1
+script = ExtResource( 8 )
+
+[node name="perfilmini" type="Sprite" parent="."]
+position = Vector2( 1240, 39 )
+texture = ExtResource( 6 )
+
+[node name="MiniLogo" type="Sprite" parent="."]
+position = Vector2( 1190, 679 )
+texture = ExtResource( 12 )
+
+[connection signal="button_up" from="button5" to="button5" method="_on_button5_button_up"]
+[connection signal="button_up" from="button6" to="button6" method="_on_button6_button_up"]

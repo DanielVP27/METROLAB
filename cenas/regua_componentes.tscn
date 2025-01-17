@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://imagem/instrumentos/regua/escala.png" type="Texture" id=1]
+[ext_resource path="res://script/regua_componentes/regua_componentes.gd" type="Script" id=2]
+[ext_resource path="res://icone/voltar.png" type="Texture" id=3]
+[ext_resource path="res://icone/menu.png" type="Texture" id=4]
+[ext_resource path="res://script/regua_componentes/button2.gd" type="Script" id=5]
+[ext_resource path="res://script/regua_componentes/button.gd" type="Script" id=6]
+[ext_resource path="res://temas/botoes_de_funcaobasica.tres" type="Theme" id=7]
+[ext_resource path="res://imagem/icones/indicarlabel.png" type="Texture" id=8]
+[ext_resource path="res://imagem/icones/indicarlabelbaixo.png" type="Texture" id=9]
+[ext_resource path="res://temas/arial_negrito.tres" type="DynamicFont" id=10]
+[ext_resource path="res://imagem/fundos/mini_logo.png" type="Texture" id=11]
+[ext_resource path="res://fontes/new_dynamicfont.tres" type="DynamicFont" id=12]
+
+[node name="regua_componentes" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="regua" type="Sprite" parent="."]
+position = Vector2( 640, 361.243 )
+scale = Vector2( 1.2037, 1.02154 )
+texture = ExtResource( 1 )
+
+[node name="area2d" type="Area2D" parent="."]
+
+[node name="collisionpolygon2d" type="CollisionPolygon2D" parent="area2d"]
+position = Vector2( -32.4124, 206.831 )
+scale = Vector2( 1.05586, 0.35473 )
+polygon = PoolVector2Array( 32, 152, 35, 298, 1236, 300, 1236, 156 )
+
+[node name="line2d" type="Line2D" parent="area2d"]
+visible = false
+points = PoolVector2Array( 612, 253, 612, 193, 581, 194, 613, 155, 641, 193, 612, 193 )
+
+[node name="indicarlabel" type="Sprite" parent="area2d"]
+visible = false
+position = Vector2( 613.355, 196 )
+scale = Vector2( 0.590079, 0.457388 )
+texture = ExtResource( 8 )
+
+[node name="area2d2" type="Area2D" parent="."]
+
+[node name="collisionpolygon2d" type="CollisionPolygon2D" parent="area2d2"]
+position = Vector2( -33.4717, 227.79 )
+scale = Vector2( 1.05329, 0.251323 )
+polygon = PoolVector2Array( 37, 348, 37, 537, 1238, 530, 1234, 353 )
+
+[node name="line2d2" type="Line2D" parent="area2d2"]
+visible = false
+points = PoolVector2Array( 616, 363, 616, 417, 652, 417, 618, 452, 577, 418, 616, 418 )
+
+[node name="indicarlabelbaixo" type="Sprite" parent="area2d2"]
+visible = false
+position = Vector2( 616.125, 436 )
+scale = Vector2( 0.607954, 0.500965 )
+texture = ExtResource( 9 )
+
+[node name="label" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 84.0
+margin_right = 1217.0
+margin_bottom = 169.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+align = 1
+
+[node name="label2" type="Label" parent="."]
+margin_left = 19.0
+margin_top = 538.0
+margin_right = 1215.0
+margin_bottom = 684.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+align = 1
+
+[node name="button" type="Button" parent="."]
+margin_right = 71.0
+margin_bottom = 71.0
+theme = ExtResource( 7 )
+icon = ExtResource( 4 )
+icon_align = 1
+script = ExtResource( 6 )
+
+[node name="button2" type="Button" parent="."]
+margin_left = 85.0
+margin_right = 156.0
+margin_bottom = 71.0
+theme = ExtResource( 7 )
+icon = ExtResource( 3 )
+icon_align = 1
+script = ExtResource( 5 )
+
+[node name="MiniLogo" type="Sprite" parent="."]
+position = Vector2( 1190, 677 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 329.0
+margin_top = 11.0
+margin_right = 966.0
+margin_bottom = 35.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+text = "DESLIZE O DEDO SOBRE OS COMPONENTES PARA SABER MAIS!"
+
+[connection signal="mouse_entered" from="area2d" to="." method="_on_area2d_mouse_entered"]
+[connection signal="mouse_exited" from="area2d" to="." method="_on_area2d_mouse_exited"]
+[connection signal="mouse_entered" from="area2d2" to="." method="_on_area2d2_mouse_entered"]
+[connection signal="mouse_exited" from="area2d2" to="." method="_on_area2d2_mouse_exited"]
+[connection signal="button_up" from="button" to="button" method="_on_button_button_up"]
+[connection signal="button_up" from="button2" to="button2" method="_on_button2_button_up"]

@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=2]
+
+[ext_resource path="res://temas/botoes.tres" type="StyleBox" id=1]
+[ext_resource path="res://temas/arial_negrito.tres" type="DynamicFont" id=2]
+
+[resource]
+LineEdit/fonts/font = ExtResource( 2 )
+LineEdit/styles/focus = ExtResource( 1 )
+LineEdit/styles/normal = ExtResource( 1 )
+LineEdit/styles/read_only = ExtResource( 1 )

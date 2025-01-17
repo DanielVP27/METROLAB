@@ -1,0 +1,234 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://icone/voltar.png" type="Texture" id=1]
+[ext_resource path="res://icone/menu.png" type="Texture" id=2]
+[ext_resource path="res://script/grafico_desviopad_fracionario/button.gd" type="Script" id=3]
+[ext_resource path="res://script/grafico_desviopad_fracionario/grafico_desviopad_fracionario.gd" type="Script" id=4]
+[ext_resource path="res://script/grafico_desviopad_fracionario/button2.gd" type="Script" id=5]
+[ext_resource path="res://imagem/fundos/fundo_branco.png" type="Texture" id=6]
+[ext_resource path="res://fontes/new_dynamicfont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://temas/tema_exemplo.tres" type="Theme" id=8]
+[ext_resource path="res://temas/botoes_de_funcaobasica.tres" type="Theme" id=9]
+[ext_resource path="res://icone/graficos_mini.png" type="Texture" id=11]
+[ext_resource path="res://temas/arial_negrito.tres" type="DynamicFont" id=12]
+[ext_resource path="res://temas/tema_button_azulmarinho.tres" type="Theme" id=13]
+[ext_resource path="res://temas/lineedit.tres" type="Theme" id=14]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.156863, 1, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.356863, 0.419608, 0.588235, 1 )
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 535.0
+margin_top = 377.0
+margin_right = 5.0
+margin_bottom = 7.0
+script = ExtResource( 4 )
+
+[node name="fundobranco" type="Sprite" parent="."]
+position = Vector2( -994, 17 )
+scale = Vector2( 1.80874, 1.36706 )
+texture = ExtResource( 6 )
+
+[node name="fundobranco2" type="Sprite" parent="."]
+position = Vector2( 604, -464 )
+scale = Vector2( 1.80874, 1.36706 )
+texture = ExtResource( 6 )
+
+[node name="texturerect" type="TextureRect" parent="."]
+margin_top = -2.0
+margin_right = 1282.0
+margin_bottom = 482.0
+
+[node name="num_readings_edit" type="LineEdit" parent="."]
+margin_left = -494.0
+margin_top = -262.0
+margin_right = -50.0
+margin_bottom = -212.0
+theme = ExtResource( 13 )
+text = "INSIRA O NÚMERO DE LEITURAS"
+align = 1
+
+[node name="updatebutton" type="LineEdit" parent="."]
+margin_left = 445.0
+margin_top = -230.0
+margin_right = 678.0
+margin_bottom = -177.0
+theme = ExtResource( 14 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "INSIRA A RESOLUÇÃO"
+align = 1
+
+[node name="desviopadraolabel" type="Label" parent="."]
+margin_left = -494.0
+margin_top = -87.0
+margin_right = -296.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="medialabel" type="Label" parent="."]
+margin_left = -494.0
+margin_top = -37.0
+margin_right = -341.0
+margin_bottom = 56.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="menorvalorlabel" type="Label" parent="."]
+margin_left = -494.0
+margin_top = 13.0
+margin_right = -312.0
+margin_bottom = 110.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="maiorvalorlabel" type="Label" parent="."]
+margin_left = -494.0
+margin_top = 63.0
+margin_right = -311.0
+margin_bottom = 173.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="faixadedistribuicaolabel" type="Label" parent="."]
+visible = false
+margin_left = -464.0
+margin_top = 300.0
+margin_right = -292.0
+margin_bottom = 420.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="resultadoslabel" type="Label" parent="."]
+margin_left = -494.0
+margin_top = 113.0
+margin_right = -354.0
+margin_bottom = 170.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="label7" type="Label" parent="."]
+margin_left = -494.0
+margin_top = 153.0
+margin_right = -411.0
+margin_bottom = 195.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="button" type="Button" parent="."]
+margin_left = -533.0
+margin_top = -366.0
+margin_right = -462.0
+margin_bottom = -295.0
+theme = ExtResource( 9 )
+icon = ExtResource( 2 )
+icon_align = 1
+script = ExtResource( 3 )
+
+[node name="button2" type="Button" parent="."]
+margin_left = -460.0
+margin_top = -366.0
+margin_right = -389.0
+margin_bottom = -295.0
+theme = ExtResource( 9 )
+icon = ExtResource( 1 )
+icon_align = 1
+script = ExtResource( 5 )
+
+[node name="button3" type="Button" parent="."]
+margin_left = 42.0
+margin_top = -195.0
+margin_right = 132.0
+margin_bottom = -145.0
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "90%"
+
+[node name="button4" type="Button" parent="."]
+margin_left = 161.0
+margin_top = -195.0
+margin_right = 251.0
+margin_bottom = -145.0
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "95%"
+
+[node name="button5" type="Button" parent="."]
+margin_left = 276.0
+margin_top = -195.0
+margin_right = 366.0
+margin_bottom = -145.0
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "99%"
+
+[node name="label" type="Label" parent="."]
+margin_left = -494.0
+margin_top = 163.0
+margin_right = -311.0
+margin_bottom = 269.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 12 )
+
+[node name="inputs_container" type="VBoxContainer" parent="."]
+margin_left = -202.0
+margin_top = -92.0
+margin_right = -32.0
+margin_bottom = 62.0
+theme = ExtResource( 14 )
+
+[node name="create_inputs_button" type="Button" parent="."]
+margin_left = -494.0
+margin_top = -195.0
+margin_right = -50.0
+margin_bottom = -145.0
+theme = ExtResource( 8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "CALCULAR NÚMERO DE LEITURAS"
+icon_align = 1
+
+[node name="graficosmini" type="Sprite" parent="."]
+position = Vector2( 708, -330 )
+scale = Vector2( 0.945422, 0.971831 )
+texture = ExtResource( 11 )
+
+[node name="label2" type="Label" parent="."]
+margin_left = 3.0
+margin_top = -262.0
+margin_right = 423.0
+margin_bottom = -203.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 12 )
+custom_styles/normal = SubResource( 1 )
+text = "SELECIONE A CONFIABILIDADE
+DESEJADA"
+align = 1
+
+[node name="FundoBranco" type="Sprite" parent="."]
+position = Vector2( 1514, 651 )
+texture = ExtResource( 6 )
+
+[connection signal="focus_entered" from="num_readings_edit" to="." method="_on_num_readings_edit_focus_entered"]
+[connection signal="focus_entered" from="updatebutton" to="." method="_on_updatebutton_focus_entered"]
+[connection signal="button_up" from="button" to="button" method="_on_button_button_up"]
+[connection signal="button_up" from="button2" to="button2" method="_on_button2_button_up"]

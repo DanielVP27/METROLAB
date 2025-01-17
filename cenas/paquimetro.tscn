@@ -1,0 +1,190 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://imagem/instrumentos/paquimetro/paquimetro_origi.jpg" type="Texture" id=1]
+[ext_resource path="res://script/paquimetro/cursor.gd" type="Script" id=2]
+[ext_resource path="res://script/paquimetro/button_menu.gd" type="Script" id=3]
+[ext_resource path="res://icone/menu.png" type="Texture" id=4]
+[ext_resource path="res://icone/voltar.png" type="Texture" id=5]
+[ext_resource path="res://script/paquimetro/button_voltar.gd" type="Script" id=6]
+[ext_resource path="res://imagem/instrumentos/paquimetro/nonio_origin.png" type="Texture" id=7]
+[ext_resource path="res://script/paquimetro/paquimetro.gd" type="Script" id=8]
+[ext_resource path="res://script/paquimetro/quadrado_2.gd" type="Script" id=9]
+[ext_resource path="res://imagem/fundos/parafuso.png" type="Texture" id=10]
+[ext_resource path="res://script/paquimetro/circulo_2.gd" type="Script" id=11]
+[ext_resource path="res://script/paquimetro/trapezio_2.gd" type="Script" id=12]
+[ext_resource path="res://imagem/fundos/ruela.png" type="Texture" id=13]
+[ext_resource path="res://imagem/fundos/parafusolongo.png" type="Texture" id=14]
+[ext_resource path="res://temas/botoes_de_funcaobasica.tres" type="Theme" id=15]
+[ext_resource path="res://fontes/new_dynamicfont.tres" type="DynamicFont" id=16]
+[ext_resource path="res://temas/arial_negrito.tres" type="DynamicFont" id=17]
+[ext_resource path="res://imagem/fundos/mini_logo.png" type="Texture" id=18]
+
+[node name="paquimetro" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 28.0 ]
+}
+
+[node name="paquimetro" type="Sprite" parent="."]
+position = Vector2( 1, 0 )
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 8 )
+
+[node name="cursor" type="Sprite" parent="."]
+position = Vector2( -17, 192 )
+scale = Vector2( 0.325193, 0.327738 )
+texture = ExtResource( 7 )
+centered = false
+script = ExtResource( 2 )
+
+[node name="area2d" type="Area2D" parent="cursor"]
+position = Vector2( 0.995789, -0.000183105 )
+
+[node name="collisionpolygon2d" type="CollisionPolygon2D" parent="cursor/area2d"]
+position = Vector2( 810.309, 637.052 )
+scale = Vector2( 4.33767, 4.39143 )
+polygon = PoolVector2Array( -104.523, -36.0379, -104.523, -2.36444, -104.523, 132.493, -88.5955, 125.841, -79.6364, 112.536, -49.8801, -3.36353, 49.2948, -1.98776, 55.6252, 13.1456, 68.9892, 22.0881, 87.5993, 10.53, 102.531, -9.42767, 102.531, -36.0379 )
+
+[node name="button" type="Button" parent="."]
+margin_top = 1.0
+margin_right = 71.0
+margin_bottom = 72.0
+theme = ExtResource( 15 )
+icon = ExtResource( 4 )
+icon_align = 1
+script = ExtResource( 3 )
+
+[node name="button2" type="Button" parent="."]
+margin_left = 84.0
+margin_top = 1.0
+margin_right = 155.0
+margin_bottom = 72.0
+theme = ExtResource( 15 )
+icon = ExtResource( 5 )
+icon_align = 1
+script = ExtResource( 6 )
+
+[node name="vetor_escala" type="Label" parent="."]
+visible = false
+margin_left = 17.0
+margin_top = 94.0
+margin_right = 57.0
+margin_bottom = 108.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "x_tela"
+
+[node name="vetor_nonio" type="Label" parent="."]
+visible = false
+margin_left = 16.0
+margin_top = 124.0
+margin_right = 69.0
+margin_bottom = 138.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "x_cursor"
+
+[node name="x_tela" type="Label" parent="."]
+visible = false
+margin_left = 20.0
+margin_top = 151.0
+margin_right = 60.0
+margin_bottom = 165.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "x_tela"
+
+[node name="index_escala" type="Label" parent="."]
+visible = false
+margin_left = 294.0
+margin_top = 151.0
+margin_right = 375.0
+margin_bottom = 165.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "index_escala"
+
+[node name="index_nonio" type="Label" parent="."]
+visible = false
+margin_left = 190.0
+margin_top = 153.0
+margin_right = 230.0
+margin_bottom = 167.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "index_nonio"
+
+[node name="resultado" type="Label" parent="."]
+margin_left = 133.0
+margin_top = 116.0
+margin_right = 310.0
+margin_bottom = 163.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+
+[node name="quadrado" type="Sprite" parent="."]
+position = Vector2( 538, 117.5 )
+scale = Vector2( 1, 0.905406 )
+texture = ExtResource( 10 )
+script = ExtResource( 9 )
+
+[node name="label" type="Label" parent="quadrado"]
+margin_left = -56.0
+margin_top = 15.7612
+margin_right = 60.0
+margin_bottom = 57.7612
+input_pass_on_modal_close_click = false
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 16 )
+text = "1 7/32\""
+align = 1
+valign = 1
+
+[node name="circulo" type="Sprite" parent="."]
+position = Vector2( 763.5, 127 )
+scale = Vector2( 0.985437, 0.740385 )
+texture = ExtResource( 13 )
+script = ExtResource( 11 )
+
+[node name="label2" type="Label" parent="circulo"]
+margin_left = -65.4532
+margin_top = -39.1688
+margin_right = 76.5468
+margin_bottom = 26.8312
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 16 )
+text = "1 1/2\""
+align = 1
+valign = 1
+
+[node name="trapezio" type="Sprite" parent="."]
+position = Vector2( 1060.5, 127 )
+scale = Vector2( 0.986711, 1.24324 )
+texture = ExtResource( 14 )
+script = ExtResource( 12 )
+
+[node name="label3" type="Label" parent="trapezio"]
+margin_left = -39.0186
+margin_top = 15.1461
+margin_right = 53.9814
+margin_bottom = 47.1461
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 16 )
+text = "2 27/128\""
+align = 1
+valign = 1
+
+[node name="MiniLogo" type="Sprite" parent="."]
+position = Vector2( 1189, 679 )
+texture = ExtResource( 18 )
+
+[node name="label" type="Label" parent="."]
+margin_left = 365.0
+margin_top = 668.0
+margin_right = 933.0
+margin_bottom = 692.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 16 )
+text = "DESLIZE O NÔNIO E ARRASTE OS OBJETOS PARA MEDIR!"
+
+[connection signal="input_event" from="cursor/area2d" to="cursor" method="_on_area2d_input_event"]
+[connection signal="button_up" from="button" to="button" method="_on_button_button_up"]
+[connection signal="button_up" from="button2" to="button2" method="_on_button2_button_up"]

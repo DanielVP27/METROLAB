@@ -1,0 +1,119 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://imagem/icones/setaesquerda.png" type="Texture" id=1]
+[ext_resource path="res://imagem/instrumentos/regua/regua_16_2.png" type="Texture" id=2]
+[ext_resource path="res://icone/menu.png" type="Texture" id=3]
+[ext_resource path="res://icone/voltar.png" type="Texture" id=4]
+[ext_resource path="res://script/regua_16/button.gd" type="Script" id=5]
+[ext_resource path="res://script/regua_16/button2.gd" type="Script" id=6]
+[ext_resource path="res://script/regua_16/regua.gd" type="Script" id=7]
+[ext_resource path="res://script/regua_16/seta.gd" type="Script" id=8]
+[ext_resource path="res://temas/botoes_de_funcaobasica.tres" type="Theme" id=9]
+[ext_resource path="res://icone/simulador_mini.png" type="Texture" id=10]
+[ext_resource path="res://temas/arial_negrito.tres" type="DynamicFont" id=11]
+[ext_resource path="res://imagem/instrumentos/regua/regua16red.png" type="Texture" id=12]
+[ext_resource path="res://imagem/fundos/mini_logo.png" type="Texture" id=13]
+[ext_resource path="res://fontes/new_dynamicfont.tres" type="DynamicFont" id=14]
+[ext_resource path="res://imagem/instrumentos/regua/regua16ajustado.png" type="Texture" id=15]
+
+[node name="regua_16" type="Node2D"]
+
+[node name="regua" type="Sprite" parent="."]
+position = Vector2( 629, 361.22 )
+scale = Vector2( 0.772807, 1.02003 )
+texture = ExtResource( 2 )
+script = ExtResource( 7 )
+
+[node name="regua16red" type="Sprite" parent="."]
+position = Vector2( 630.5, 364.5 )
+scale = Vector2( 0.535762, 0.60367 )
+texture = ExtResource( 12 )
+
+[node name="Regua16Ajustado" type="Sprite" parent="."]
+position = Vector2( 630, 362.25 )
+scale = Vector2( 0.732759, 0.81358 )
+texture = ExtResource( 15 )
+
+[node name="seta" type="Sprite" parent="."]
+position = Vector2( 32, 564 )
+scale = Vector2( 0.147, 0.138 )
+texture = ExtResource( 1 )
+script = ExtResource( 8 )
+
+[node name="area2d" type="Area2D" parent="seta"]
+
+[node name="collisionpolygon2d" type="CollisionPolygon2D" parent="seta/area2d"]
+position = Vector2( 6.44537, 0 )
+polygon = PoolVector2Array( -225.589, 231.358, -116.017, 174.61, -70.8996, 87.3052, -45.118, -17.4609, -45.118, -39.2871, -135.353, -34.9219, 19.336, -253.184, 174.025, -52.3828, 186.916, -34.9219, 77.3445, -34.9219, 64.4538, 78.5747, 12.8906, 161.514, -58.0088, 213.897, -186.917, 248.819 )
+
+[node name="line2d" type="Line2D" parent="seta"]
+position = Vector2( 32.2268, -261.915 )
+points = PoolVector2Array( -0.000213623, 0.000244141, 1.78682, -2578.66 )
+width = 25.0
+default_color = Color( 0, 0.109804, 1, 1 )
+antialiased = true
+
+[node name="button" type="Button" parent="."]
+margin_right = 71.0
+margin_bottom = 71.0
+theme = ExtResource( 9 )
+icon = ExtResource( 3 )
+icon_align = 1
+script = ExtResource( 5 )
+
+[node name="button2" type="Button" parent="."]
+margin_left = 85.0
+margin_right = 156.0
+margin_bottom = 71.0
+theme = ExtResource( 9 )
+icon = ExtResource( 4 )
+icon_align = 1
+script = ExtResource( 6 )
+
+[node name="SimuladorMini" type="Sprite" parent="button2"]
+position = Vector2( 1148, 30 )
+texture = ExtResource( 10 )
+
+[node name="qual_passou" type="Label" parent="."]
+margin_left = 193.0
+margin_top = 10.0
+margin_right = 345.0
+margin_bottom = 59.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+
+[node name="leitura" type="Label" parent="."]
+margin_left = 512.0
+margin_top = 10.0
+margin_right = 696.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 11 )
+
+[node name="vetor_deltas" type="Label" parent="."]
+visible = false
+margin_left = 112.0
+margin_top = 132.0
+margin_right = 152.0
+margin_bottom = 146.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+
+[node name="MiniLogo" type="Sprite" parent="."]
+position = Vector2( 1189, 679 )
+texture = ExtResource( 13 )
+
+[node name="label" type="Label" parent="."]
+margin_left = 493.0
+margin_top = 668.0
+margin_right = 790.0
+margin_bottom = 692.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 14 )
+text = "DESLIZE A SETA PARA MEDIR!"
+
+[connection signal="input_event" from="seta/area2d" to="seta" method="_on_area2d_input_event"]
+[connection signal="button_up" from="button" to="button" method="_on_button_button_up"]
+[connection signal="button_up" from="button2" to="button2" method="_on_button2_button_up"]

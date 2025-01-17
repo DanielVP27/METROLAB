@@ -1,0 +1,180 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://icone/menu.png" type="Texture" id=1]
+[ext_resource path="res://icone/voltar.png" type="Texture" id=2]
+[ext_resource path="res://imagem/instrumentos/paquimetro/nonio_origin.png" type="Texture" id=3]
+[ext_resource path="res://imagem/instrumentos/paquimetro/paquimetro_origi.jpg" type="Texture" id=4]
+[ext_resource path="res://imagem/fundos/ruela.png" type="Texture" id=5]
+[ext_resource path="res://imagem/fundos/parafusolongo.png" type="Texture" id=6]
+[ext_resource path="res://imagem/fundos/parafuso.png" type="Texture" id=7]
+[ext_resource path="res://script/paquimetro_005/quadrado.gd" type="Script" id=8]
+[ext_resource path="res://script/paquimetro_005/paquimetro.gd" type="Script" id=9]
+[ext_resource path="res://script/paquimetro_005/circulo.gd" type="Script" id=10]
+[ext_resource path="res://script/paquimetro_005/nonio.gd" type="Script" id=11]
+[ext_resource path="res://script/paquimetro_005/button.gd" type="Script" id=12]
+[ext_resource path="res://script/paquimetro_005/button2.gd" type="Script" id=13]
+[ext_resource path="res://script/paquimetro_005/trapezio.gd" type="Script" id=14]
+[ext_resource path="res://temas/botoes_de_funcaobasica.tres" type="Theme" id=15]
+[ext_resource path="res://fontes/new_dynamicfont.tres" type="DynamicFont" id=16]
+[ext_resource path="res://temas/arial_negrito.tres" type="DynamicFont" id=17]
+[ext_resource path="res://imagem/fundos/mini_logo.png" type="Texture" id=18]
+
+[node name="paquimetro" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -68.0 ]
+}
+
+[node name="paquimetro" type="Sprite" parent="."]
+position = Vector2( 648, 344 )
+scale = Vector2( 1.03906, 1.09722 )
+texture = ExtResource( 4 )
+script = ExtResource( 9 )
+
+[node name="nonio" type="Sprite" parent="."]
+position = Vector2( 223, 386.5 )
+scale = Vector2( 0.326478, 0.358913 )
+texture = ExtResource( 3 )
+script = ExtResource( 11 )
+
+[node name="area2d" type="Area2D" parent="nonio"]
+position = Vector2( -22.2285, 165.552 )
+
+[node name="collisionpolygon2d" type="CollisionPolygon2D" parent="nonio/area2d"]
+position = Vector2( 19.9998, -118.452 )
+polygon = PoolVector2Array( -414.933, -160.459, -416.994, -13.8943, -424.813, 542.154, -330.959, 491.566, -195.118, -33.989, 237.105, -36.7996, 246.984, 5.3573, 264.273, 30.6514, 288.971, 58.7559, 333.429, 67.1873, 385.295, 53.135, 407.524, 22.22, 427.283, -33.989, 459.391, -42.4204, 466.8, -163.27 )
+
+[node name="button" type="Button" parent="."]
+margin_right = 71.0
+margin_bottom = 71.0
+theme = ExtResource( 15 )
+icon = ExtResource( 1 )
+icon_align = 1
+script = ExtResource( 12 )
+
+[node name="button2" type="Button" parent="."]
+margin_left = 84.0
+margin_right = 155.0
+margin_bottom = 71.0
+theme = ExtResource( 15 )
+icon = ExtResource( 2 )
+script = ExtResource( 13 )
+
+[node name="vetor_escala" type="Label" parent="."]
+visible = false
+margin_left = 232.0
+margin_top = 519.0
+margin_right = 415.0
+margin_bottom = 574.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+
+[node name="vetor_nonio" type="Label" parent="."]
+visible = false
+margin_left = 266.0
+margin_top = 465.0
+margin_right = 496.0
+margin_bottom = 563.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+
+[node name="x_tela" type="Label" parent="."]
+visible = false
+margin_left = 738.0
+margin_top = 400.0
+margin_right = 995.0
+margin_bottom = 480.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+
+[node name="index_escala" type="Label" parent="."]
+visible = false
+margin_left = 1023.0
+margin_top = 394.0
+margin_right = 1233.0
+margin_bottom = 492.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+
+[node name="index_nonio" type="Label" parent="."]
+visible = false
+margin_left = 197.0
+margin_top = 18.0
+margin_right = 395.0
+margin_bottom = 89.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+
+[node name="resultado" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 97.0
+margin_right = 328.0
+margin_bottom = 178.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+
+[node name="quadrado" type="Sprite" parent="."]
+position = Vector2( 471, 108 )
+scale = Vector2( 1.13415, 1.16216 )
+texture = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="label" type="Label" parent="quadrado"]
+margin_left = -43.0
+margin_top = 18.0
+margin_right = 52.0
+margin_bottom = 42.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 16 )
+text = "34,00 mm"
+
+[node name="circulo" type="Sprite" parent="."]
+position = Vector2( 725.516, 105.99 )
+scale = Vector2( 1.06295, 0.682594 )
+texture = ExtResource( 5 )
+script = ExtResource( 10 )
+
+[node name="label" type="Label" parent="circulo"]
+margin_left = -43.0
+margin_top = -19.0
+margin_right = 52.0
+margin_bottom = 5.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 16 )
+text = "40,00 mm"
+
+[node name="trapezio" type="Sprite" parent="."]
+position = Vector2( 1067, 105.5 )
+scale = Vector2( 1.04319, 1.0946 )
+texture = ExtResource( 6 )
+script = ExtResource( 14 )
+
+[node name="label" type="Label" parent="trapezio"]
+margin_left = -108.013
+margin_top = 20.0
+margin_right = -13.0128
+margin_bottom = 44.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 16 )
+text = "57,10 mm"
+
+[node name="MiniLogo" type="Sprite" parent="."]
+position = Vector2( 1188, 678 )
+texture = ExtResource( 18 )
+
+[node name="label" type="Label" parent="."]
+margin_left = 365.0
+margin_top = 668.0
+margin_right = 933.0
+margin_bottom = 692.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 16 )
+text = "DESLIZE O NÔNIO E ARRASTE OS OBJETOS PARA MEDIR!"
+
+[connection signal="input_event" from="nonio/area2d" to="nonio" method="_on_area2d_input_event"]
+[connection signal="button_up" from="button" to="button" method="_on_button_button_up"]
+[connection signal="button_up" from="button2" to="button2" method="_on_button2_button_up"]

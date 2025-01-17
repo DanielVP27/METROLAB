@@ -1,0 +1,89 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://temas/tema_exemplo.tres" type="Theme" id=1]
+[ext_resource path="res://icone/voltar.png" type="Texture" id=2]
+[ext_resource path="res://imagem/fundos/fundo_branco.png" type="Texture" id=3]
+[ext_resource path="res://icone/cefet.png" type="Texture" id=4]
+[ext_resource path="res://icone/menu.png" type="Texture" id=5]
+[ext_resource path="res://temas/botoes_de_funcaobasica.tres" type="Theme" id=6]
+[ext_resource path="res://fontes/new_dynamicfont.tres" type="DynamicFont" id=7]
+[ext_resource path="res://script/selecionar_paquimetro_resolucao/button.gd" type="Script" id=8]
+[ext_resource path="res://script/selecionar_paquimetro_resolucao/button5.gd" type="Script" id=9]
+[ext_resource path="res://script/selecionar_paquimetro_resolucao/button2.gd" type="Script" id=10]
+[ext_resource path="res://script/selecionar_paquimetro_resolucao/button3.gd" type="Script" id=11]
+[ext_resource path="res://script/selecionar_paquimetro_resolucao/button4.gd" type="Script" id=12]
+[ext_resource path="res://imagem/fundos/mini_logo.png" type="Texture" id=13]
+
+[node name="selecionar_paquimetro" type="Node2D"]
+
+[node name="fundobranco" type="Sprite" parent="."]
+position = Vector2( 646, 357.5 )
+scale = Vector2( 1.20947, 1.12703 )
+texture = ExtResource( 3 )
+
+[node name="button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+theme = ExtResource( 6 )
+icon = ExtResource( 5 )
+icon_align = 1
+script = ExtResource( 8 )
+
+[node name="button2" type="Button" parent="."]
+margin_left = 85.0
+margin_right = 156.0
+margin_bottom = 71.0
+theme = ExtResource( 6 )
+icon = ExtResource( 2 )
+icon_align = 1
+script = ExtResource( 10 )
+
+[node name="button3" type="Button" parent="."]
+margin_left = 371.0
+margin_top = 229.0
+margin_right = 926.0
+margin_bottom = 329.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "PAQUÍMETRO COM RESOLUÇÃO 1/128\""
+script = ExtResource( 11 )
+
+[node name="button4" type="Button" parent="."]
+margin_left = 371.0
+margin_top = 370.0
+margin_right = 926.0
+margin_bottom = 470.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "PAQUÍMETRO COM RESOLUÇÃO 0,05 mm"
+script = ExtResource( 12 )
+
+[node name="button5" type="Button" parent="."]
+margin_left = 371.0
+margin_top = 518.0
+margin_right = 926.0
+margin_bottom = 618.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "PAQUÍMETRO COM RESOLUÇÃO 0,02 mm"
+script = ExtResource( 9 )
+
+[node name="cefet" type="TextureRect" parent="."]
+margin_left = 558.0
+margin_top = 2.0
+margin_right = 741.0
+margin_bottom = 125.0
+texture = ExtResource( 4 )
+
+[node name="MiniLogo" type="Sprite" parent="."]
+position = Vector2( 1187, 678 )
+texture = ExtResource( 13 )
+
+[connection signal="button_up" from="button" to="button" method="_on_button_button_up"]
+[connection signal="button_up" from="button2" to="button2" method="_on_button2_button_up"]
+[connection signal="button_up" from="button3" to="button3" method="_on_button3_button_up"]
+[connection signal="button_up" from="button4" to="button4" method="_on_button4_button_up"]
+[connection signal="button_up" from="button5" to="button5" method="_on_button5_button_up"]
